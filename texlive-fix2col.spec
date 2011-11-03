@@ -1,3 +1,9 @@
+# revision 17133
+# category Package
+# catalog-ctan /macros/latex/contrib/fix2col
+# catalog-date 2010-02-23 16:16:11 +0100
+# catalog-license lppl
+# catalog-version undef
 Name:		texlive-fix2col
 Version:	20100223
 Release:	1
@@ -45,6 +51,7 @@ figure.
 #- source
 %doc %{_texmfdistdir}/source/latex/fix2col/fix2col.dtx
 %doc %{_texmfdistdir}/source/latex/fix2col/fix2col.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -55,3 +62,5 @@ figure.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
