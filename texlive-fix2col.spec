@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-fix2col
 Version:	20100223
-Release:	7
+Release:	8
 Summary:	Fix miscellaneous two column mode features
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/fix2col
