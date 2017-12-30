@@ -5,7 +5,7 @@
 # catalog-license lppl
 # catalog-version undef
 Name:		texlive-fix2col
-Version:	0.04
+Version:	20170414
 Release:	1
 Summary:	Fix miscellaneous two column mode features
 Group:		Publishing
