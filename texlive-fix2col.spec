@@ -1,6 +1,6 @@
 Name:		texlive-fix2col
 Version:	38770
-Release:	1
+Release:	2
 Summary:	Fix miscellaneous two column mode features
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/fix2col
