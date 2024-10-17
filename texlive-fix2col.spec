@@ -3,7 +3,7 @@ Version:	38770
 Release:	2
 Summary:	Fix miscellaneous two column mode features
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/fix2col
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/fix2col
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fix2col.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fix2col.doc.r%{version}.tar.xz
