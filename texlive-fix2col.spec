@@ -1,48 +1,29 @@
-Name:		texlive-fix2col
-Version:	38770
-Release:	2
+%global tl_name fix2col
+%global tl_revision 78931
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.04
+Release:	%{tl_revision}.1
 Summary:	Fix miscellaneous two column mode features
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/fix2col
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fix2col.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fix2col.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fix2col.source.r%{version}.tar.xz
+License:	lppl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/fix2col.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/fix2col.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/fix2col.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Fix mark handling so that \firstmark is taken from the first
-column if that column has any marks at all; keep two column
-floats like figure* in sequence with single column floats like
-figure.
+OBSOLETE: do not use in new documents. This package will do nothing in
+LaTeX formats after 2015/01/01 as the fixes that it implements were
+incorporated into the fixltx2e package, which is itself obsolete as
+since the 2015/01/01 release these fixes are in the LaTeX format itself.
+Fix mark handling so that \firstmark is taken from the first column if
+that column has any marks at all; keep two column floats like figure* in
+sequence with single column floats like figure.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/fix2col/fix2col.sty
-%doc %{_texmfdistdir}/doc/latex/fix2col/README
-%doc %{_texmfdistdir}/doc/latex/fix2col/fix2col.pdf
-#- source
-%doc %{_texmfdistdir}/source/latex/fix2col/fix2col.dtx
-%doc %{_texmfdistdir}/source/latex/fix2col/fix2col.ins
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
